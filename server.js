@@ -84,6 +84,23 @@ app.get('/soap', (req, res)=>  {
 });
 
 // ****************************************
+// ***********  DELETE ROUTE  *************
+// ****************************************
+app.delete('/:id', (req, res)=>{
+// console.log("in log/delete");
+// res.send('deleting...');
+    Soap.findByIdAndRemove(req.params.id, (err, data) => {
+      res.redirect('/soap');  //redirect to soap index page
+    });
+});
+
+// fruits.delete('/:id', (req, res) => {
+//   Fruit.findByIdAndRemove(req.params.id, (err, deletedFruit) => {
+//     res.redirect('/fruits')
+//   })
+// })
+
+// ****************************************
 // ************** SHOW ROUTE **************
 // ****************************************
 // set up soap show route and display parameters of soap selected by user
@@ -101,6 +118,7 @@ app.get('/soap/:id', (req, res)=>  {
     );
   });
 });
+
 // ****************************************
 // ************** LISTENER ****************
 // ****************************************
