@@ -54,9 +54,10 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // ******************************
 // ***** CONNECT TO HEROKU ******
 // ******************************
-app.get('/' , (req, res) => {
-  res.send('Hello World! I am going to be sending soap data to Heroku');
-});
+// test to see if it connects
+// app.get('/' , (req, res) => {
+//   res.send('Hello World! I am going to be sending soap data to Heroku');
+// });
 
 // ******************************
 // ** POPULATE WITH SEED DATA ***
