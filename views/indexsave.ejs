@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Soap Index</title>
-    </head>
-    <body>
-        <h1>Soap index page</h1>
-        <ul>
-            <% for(let i = 0; i < soap.length; i++){ %>
-            <li>
-            <a href="/soap/<%=soap[i].id; %>">
-                  <%=soap[i].name; %>
-                </li>
-            <% } %>
-        </ul>
-    </body>
-</html>
+<img src = <%=soap[i].image%> alt="Soap Image" width="100" height="100"
+<h2><%= soap[i].name %></h2>
+<h3>$  <%= " " + soap[i].price %></h3>

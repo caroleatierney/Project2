@@ -84,6 +84,24 @@ app.get('/soap', (req, res)=>  {
 });
 
 // ****************************************
+// ************** SHOW ROUTE **************
+// ****************************************
+// set up soap show route and display parameters of soap selected by user
+app.get('/soap/:id', (req, res)=>  {
+  // res.send('show');
+  // res.send(req.params.id)
+  Soap.find({}, (error, allSoap)=>  {
+    res.render(
+      'show.ejs',
+      {
+      // soap is a variable
+      // soaps[req.params.id] is the value
+      soap:allSoap[req.params.id]
+      }
+    );
+  });
+});
+// ****************************************
 // ************** LISTENER ****************
 // ****************************************
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));

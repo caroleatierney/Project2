@@ -9,9 +9,9 @@
 
     <h1>Soap Show Page</h1>
     <!-- Display Image -->
-    <img src = <%=soap.image%> alt="Soap Image" width="100" height="100"
-    <h2><%= soap.name %></h2>
-    <h3>$  <%= " " + soap.price %></h3>
+    <img src = <%=soap.image + ".jpg"%> alt="Soap Image" width="100" height="100">
+    <h2><%=soap.name%></h2>
+    <h3>Cost per bar: <%=soap.costPerBar%></h3>
 
     <a href="/soap">Back to Soap Index</a>
   </body>

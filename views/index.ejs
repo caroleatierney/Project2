@@ -8,10 +8,9 @@
         <h1>Soap index page</h1>
         <ul>
             <% for(let i = 0; i < soap.length; i++){ %>
-            <li>
-            <a href="/soap/<%=i%>">
-                  <%=soap[i].name%>
-                </li>
+              <li>
+                  <a href="/soap/<%=i%>"><%=soap[i].name%></a>
+              </li>
             <% } %>
         </ul>
     </body>
