@@ -7,7 +7,6 @@ const mongoose = require('mongoose')
 const app = express()
 const db = mongoose.connection
 require('dotenv').config()
-
 // ******************************
 // ************ PORT ************
 // ******************************
@@ -16,7 +15,9 @@ const PORT = process.env.PORT
 // ******************************
 // **********  DATABASE *********
 // ******************************
-const MONGODB_URI = process.env.MONGODB_URI
+// models
+const Soap = require('./models/soap')
+const soapSeed = require('./models/soapSeed')
 
 // ******************************
 // ***********  MONGO ***********
@@ -24,11 +25,12 @@ const MONGODB_URI = process.env.MONGODB_URI
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
+const MONGODB_URI = process.env.MONGODB_URI
 mongoose.connect(MONGODB_URI ,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useFindAndModify: false 
+    useFindAndModify: false
 });
 
 // ******************************
@@ -49,14 +51,33 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
-//___________________
-// Routes
-//___________________
-//localhost:3000
+// ******************************
+// ***** CONNECT TO HEROKU ******
+// ******************************
 app.get('/' , (req, res) => {
-  res.send('Hello World!');
+  res.send('Hello World! I am going to be sending soap data to Heroku');
 });
-//___________________
-//Listener
-//___________________
-app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
+// ******************************
+// ** POPULATE WITH SEED DATA ***
+// ******************************
+// ** remove after running once
+Soap.create( soapSeed, ( err , data ) => {
+      if ( err ) console.log ( err.message )
+          console.log( "added provided soap data" )
+      }
+);
+
+// ****************************************
+// ************ INDEX ROUTE   *************
+// ****************************************
+app.get('/', (req, res)=>  {
+  res.send('index');
+  Soap.find({}, (error, allSoap)=>  {
+    res.render(
+      'index.ejs',
+      {
+      soap:allSoap,
+      });
+  });
+});
