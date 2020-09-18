@@ -62,11 +62,11 @@ app.get('/' , (req, res) => {
 // ** POPULATE WITH SEED DATA ***
 // ******************************
 // ** remove after running once
-Soap.create( soapSeed, ( err , data ) => {
-      if ( err ) console.log ( err.message )
-          console.log( "added provided soap data" )
-      }
-);
+// Soap.create( soapSeed, ( err , data ) => {
+//       if ( err ) console.log ( err.message )
+//           console.log( "added provided soap data" )
+//       }
+// );
 
 // ****************************************
 // ************ INDEX ROUTE   *************
