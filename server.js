@@ -73,7 +73,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // ************ INDEX ROUTE   *************
 // ****************************************
 app.get('/soap', (req, res)=>  {
-// res.send('index');
+  // res.send('index');
   Soap.find({}, (error, allSoap)=>  {
     res.render(
       'index.ejs',
