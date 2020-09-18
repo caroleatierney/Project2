@@ -84,6 +84,23 @@ app.get('/soap', (req, res)=>  {
 });
 
 // ****************************************
+// ************** NEW ROUTE ***************
+// ****************************************
+app.get('/soap/new', (req, res) => {
+  res.render('soap/new.ejs')
+})
+
+// ****************************************
+// ********  CREATE "POST" ROUTE   ********
+// ****************************************
+app.post('soap/', (req, res)=> {
+  res.send('new soap received');
+  // Log.create(req.body, (error, createdSoap) => {
+    // res.redirect('/soap');
+  // });
+});
+
+// ****************************************
 // ***********  DELETE ROUTE  *************
 // ****************************************
 app.delete('/:id', (req, res)=>{
@@ -93,12 +110,6 @@ app.delete('/:id', (req, res)=>{
       res.redirect('/soap');  //redirect to soap index page
     });
 });
-
-// fruits.delete('/:id', (req, res) => {
-//   Fruit.findByIdAndRemove(req.params.id, (err, deletedFruit) => {
-//     res.redirect('/fruits')
-//   })
-// })
 
 // ****************************************
 // ************** SHOW ROUTE **************

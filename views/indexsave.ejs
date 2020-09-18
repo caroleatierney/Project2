@@ -1,3 +1,17 @@
-<img src = <%=soap[i].image%> alt="Soap Image" width="100" height="100"
-<h2><%= soap[i].name %></h2>
-<h3>$  <%= " " + soap[i].price %></h3>
+
+                  <!-- Edit button/form -->
+                  <form action="/log/<%=log[i].id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE"/>
+                  </form>
+
+                  <a href="/log/<%=log[i].id%>/edit">Edit Log</a>
+
+
+
+    <button type="button" name="button"><a href="/fruits/<%=fruit._id%>/edit">Edit</a></button>
+
+
+
+    <form action="/soap/<%=i%>?_method=DELETE" method="POST">
+      <input type="submit" value="Delete <%=soap[i].name%>"/>
+    </form>
