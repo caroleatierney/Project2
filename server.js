@@ -71,8 +71,8 @@ Soap.create( soapSeed, ( err , data ) => {
 // ****************************************
 // ************ INDEX ROUTE   *************
 // ****************************************
-app.get('/', (req, res)=>  {
-  res.send('index');
+app.get('/soap', (req, res)=>  {
+  // res.send('index');
   Soap.find({}, (error, allSoap)=>  {
     res.render(
       'index.ejs',
