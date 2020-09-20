@@ -56,7 +56,7 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // ******************************
 // test to see if it connects
 // app.get('/' , (req, res) => {
-//   res.send('Hello World! I am going to be sending soap data to Heroku');
+//   res.sevnd('Hello World! I am going to be sending soap data to Heroku');
 // });
 
 // ******************************
@@ -68,6 +68,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //           console.log( "added provided soap data" )
 //       }
 // );
+
+// * * * * * * * * *  * * * * * * * * * * *
+// * * * * * * * GET ROUTES * * * * * * * *
+// * * * * * * ORDER MATTERS  * * * * * * *
+// * * * * * * * * *  * * * * * * * * * * *
 
 // ****************************************
 // ************ INDEX ROUTE   *************
@@ -87,27 +92,24 @@ app.get('/soap', (req, res)=>  {
 // ************** NEW ROUTE ***************
 // ****************************************
 app.get('/soap/new', (req, res) => {
-  res.render('soap/new.ejs')
+  // res.send('new soap route');
+  res.render(
+    'new.ejs'
+  )
 })
 
 // ****************************************
-// ********  CREATE "POST" ROUTE   ********
+// *************  EDIT ROUTE   ************
 // ****************************************
-app.post('soap/', (req, res)=> {
-  res.send('new soap received');
-  // Log.create(req.body, (error, createdSoap) => {
-    // res.redirect('/soap');
-  // });
-});
-
-// ****************************************
-// ***********  DELETE ROUTE  *************
-// ****************************************
-app.delete('/:id', (req, res)=>{
-// console.log("in log/delete");
-// res.send('deleting...');
-    Soap.findByIdAndRemove(req.params.id, (err, data) => {
-      res.redirect('/soap');  //redirect to soap index page
+app.get('/soap/:id/edit', (req, res)=> {
+    // res.send('edit route');
+    Soap.findById(req.params.id, (err, foundSoap)=>{
+        res.render(
+    		'edit.ejs',
+    		{
+          soap: foundSoap,
+    		}
+    	);
     });
 });
 
@@ -128,6 +130,48 @@ app.get('/soap/:id', (req, res)=>  {
       }
     );
   });
+});
+
+// ****************************************
+// *************  PUT ROUTE   ************
+// ****************************************
+// posts the change from edit
+app.put('/:id', (req, res)=>{
+    res.send(req.params.id);
+    // Soap.findByIdAndUpdate(
+      // req.params.id,
+      // req.body,
+      // {new:true},
+      // (err, updatedSoap) => {
+        // res.send(updatedSoap);
+    //  res.redirect('/soap');  //redirect to index page
+    // });
+});
+
+// ****************************************
+// ********  CREATE "POST" ROUTE   ********
+// ****************************************
+// creates a new soap
+app.post('/soap', (req, res)=> {
+  // res.send('new soap post route');
+  // res.send(req.body);
+
+  Soap.create(req.body, (error, createdSoap) => {
+    res.redirect('/soap');
+  });
+});
+
+// ****************************************
+// ***********  DELETE ROUTE  *************
+// ****************************************
+app.delete('/:id', (req, res)=>{
+// console.log("in log/delete");
+// res.send('deleting...');
+  Soap.findByIdAndRemove(
+    req.params.id,
+    (err, data) => {
+    res.redirect('/soap');  //redirect to soap index page
+    });
 });
 
 // ****************************************

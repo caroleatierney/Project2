@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>soap show</title>
+
+  </head>
+  <body>
+
+    <h1>Soap Edit Page</h1>
+
+      Name: <input type="text" name="name" value="<%=soap.name%>" /><br/>
+      Ingredients: <input type="text" name="ingredients" value="<%=soap.entry%>" /><br/>
+
+      <!-- Edit button/form -->
+      <form action="<%=soap.id%>?_method=PUT" method="POST">
+        <input type="submit" value="EDIT SOAP"/>
+      </form>
+
+    <a href="/soap">Back to Soap Index</a>
+  </body>
+</html>
+
+<!-- code graveyard -->

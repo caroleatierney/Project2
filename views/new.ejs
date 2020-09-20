@@ -8,16 +8,39 @@
       <h1>New Soap Page</h1>
       <form action="/soap" method="POST">
 
-        <label for="image">Soap Image:</label>
-        <input type="text" name="name" required />
-
-
         <label for="name">Soap Name:</label>
         <input type="text" name="name" required />
-
+        <br>
+        <label for="image">Soap Image:</label>
+        <input type="text" name="name" required />
+        <br>
+        <label for="percentSuperFat">% Super Fat</label>
+        <input type="number" name="percentSuperFat" />
+        <br>
+        <label for="ingredients">Ingredients:</label>
+        <input type="text" name="ingredients" required />
+        <br>
+        <label for="costPerPound">Cost Per Pound</label>
+        <input type="number" name="costPerPound" />
+        <br>
         <label for="costPerBar">Cost Per Bar</label>
         <input type="number" name="costPerBar" />
-
+        <br>
+        <label for="addCostToGiftWrapPerBar">Cost to Gift Wrap Per Bar</label>
+        <input type="number" name="addCostToGiftWrapPerBar" />
+        <br>
+        <label for="lyeCalculation">Lye Calculation</label>
+        <input type="text" name="lyeCalculation" />
+        <br>
+        <label for="totalBarsAvail">Bars Available</label>
+        <input type="number" name="totalBarsAvail" />
+        <br>
+        <label for="exfoliating">Exfoliating</label>
+        <input type="text" name="exfoliating" />
+        <br>
+        <label for="notes">Notes</label>
+        <input type="text" name="notes" />
+        <br>
         <br>
         <input type="submit" value="Submit">
       <form>
