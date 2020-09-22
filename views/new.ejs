@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
 
-    <meta charset="utf-8">
-    <title>new soap</title>
-    <!-- icon font awesome -->
-    <script src="https://kit.fontawesome.com/db553eed8d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/app.css">
+  <!-- header -->
+  <%- include('./partials/header.ejs') %>
 
-  </head>
   <body>
 
-    <div class="soap-container">
+    <div class="new-container">
 
         <div class="nav">
             <button type="button" name="button" class="button"><a href="/soap" style="text-decoration: none">BACK TO SOAP INDEX</a></button>
@@ -21,101 +16,101 @@
           <h2>Enter a New Soap</h2>
         </div>
 
-        <div class="side-bar">
-        </div>
-
         <form action="/soap/" class="form" method="POST">
+
+            <div class="name-image">
+              <h3> Soap Name and Image </h3>
+                  <label for="name">Soap Name:</label>
+                  <input class ="soapNameImage" type="text" name="name" required /><br>
+
+                  <label for="image">Soap Image:</label>
+                  <input class ="soapNameImage" type="text" name="image" required /><br>
+            </div>
 
             <div class="soap-ingredients">
             <h3> Ingredients </h3>
 
-                  <label for="name">Soap Name:</label>
-                  <input type="text" name="name" required /><br>
-
-                  <label for="image">Soap Image:</label>
-                  <input type="text" name="image" required /><br>
-
                   <label for="ingredient1">Ingredient 1:</label>
-                  <input type="text" name="ingredient1" required /><br>
+                  <input class ="inputIngredient" type="text" name="ingredient1" required /><br>
 
                   <label for="amount1">Amount 1:</label>
-                  <input type="number" name="amount1" required /><br>
+                  <input class ="inputAmount" type="number" name="amount1" required /><br>
 
                   <label for="ingredient2">Ingredient 2:</label>
-                  <input type="text" name="ingredient2" /><br>
+                  <input class ="inputIngredient" type="text" name="ingredient2" /><br>
 
                   <label for="amount2">Amount 2:</label>
-                  <input type="number" name="amount2" /><br>
+                  <input class ="inputAmount" type="number" name="amount2" /><br>
 
                   <label for="ingredient3">Ingredient 3:</label>
-                  <input type="text" name="ingredient3" /><br>
+                  <input class ="inputIngredient" type="text" name="ingredient3" /><br>
 
                   <label for="amount3">Amount 3:</label>
-                  <input type="number" name="amount3" /><br>
+                  <input class ="inputAmount" type="number" name="amount3" /><br>
 
                   <label for="ingredient4">Ingredient 4:</label>
-                  <input type="text" name="ingredient4" /><br>
+                  <input class ="inputIngredient" type="text" name="ingredient4" /><br>
 
                   <label for="amount4">Amount 4:</label>
-                  <input type="number" name="amount4" /><br>
+                  <input class ="inputAmount" type="number" name="amount4" /><br>
 
                   <label for="ingredient5">Ingredient 5:</label>
-                  <input type="text" name="ingredient5" /><br>
+                  <input class ="inputIngredient" type="text" name="ingredient5" /><br>
 
                   <label for="amount5">Amount 5:</label>
-                  <input type="number" name="amount5" /><br>
+                  <input class ="inputAmount" type="number" name="amount5" /><br>
 
                   <label for="ingredient6">Ingredient 6:</label>
-                  <input type="text" name="ingredient6" /><br>
+                  <input class ="inputIngredient" type="text" name="ingredient6" /><br>
 
                   <label for="amount6">Amount 6:</label>
-                  <input type="number" name="amount6" /><br>
+                  <input class ="inputAmount" type="number" name="amount6" /><br>
 
                   <label for="ingredient7">Ingredient 7:</label>
-                  <input type="text" name="ingredient7" /><br>
+                  <input class ="inputIngredient" type="text" name="ingredient7" /><br>
 
                   <label for="amount7">Amount 7:</label>
-                  <input type="number" name="amount7" /><br>
+                  <input class ="inputAmount" type="number" name="amount7" /><br>
 
                   <label for="ingredient8">Ingredient 8:</label>
                   <input type="text" name="ingredient8" /><br>
 
                   <label for="amount8">Amount 8:</label>
-                  <input type="number" name="amount8" /><br>
+                  <input class ="inputAmount" type="number" name="amount8" /><br>
             </div>
 
             <div class="soap-cost">
                 <h3>Purchase Information</h3>
                     <label for="costPerBar">Cost Per Bar</label>
-                    <input type="number" name="costPerBar" /><br>
+                    <input class ="inputAmount" type="number" name="costPerBar" /><br>
                     <label for="costPerPound">Cost Per Pound</label>
-                    <input type="number" name="costPerPound" /><br>
+                    <input class ="inputAmount" type="number" name="costPerPound" /><br>
                     <label for="addCostToGiftWrapPerBar">Cost to Gift Wrap Per Bar</label>
-                    <input type="number" name="addCostToGiftWrapPerBar" /><br>
+                    <input class ="inputAmount" type="number" name="addCostToGiftWrapPerBar" /><br>
                     <label for="totalBarsAvail">Bars Available</label>
-                    <input type="number" name="totalBarsAvail" /><br>
+                    <input class ="inputAmount" type="number" name="totalBarsAvail" /><br>
 
                 <h3>Additional Information</h3>
                     <label for="percentSuperFat"> Super Fat</label>
-                    <input type="number" name="percentSuperFat"><br>
+                    <input class ="inputAmount" type="number" name="percentSuperFat"><br>
                     <label for="exfoliating">Exfoliating</label>
-                    <input type="boolean" name="exfoliating" required/><br>
+                    <input class ="inputIngredient" type="boolean" name="exfoliating" required/><br>
                     <label for="notes">Notes</label>
-                    <input type="text" name="notes" /><br>
+                    <input class ="inputIngredient" type="text" name="notes" /><br>
             </div>
 
             <div class="soap-lye-weight">
                 <h3> Lye Calculation </h3>
                     <label for="minimumWaterNeeded">Minimum Water Needed</label>
-                    <input type="number" name="minimumWaterNeeded" /><br>
+                    <input class ="inputAmount" type="number" name="minimumWaterNeeded" /><br>
                     <label for="sodiumHydroxide">Sodium Hydroxide</label>
-                    <input type="number" name="sodiumHydroxide" /><br>
+                    <input class ="inputAmount" type="number" name="sodiumHydroxide" /><br>
 
                 <h3> Weights </h3>
                     <label for="totalOilsWeight">Total Oils Weight</label>
-                    <input type="number" name="totalOilsWeight" /><br>
+                    <input class ="inputAmount" type="number" name="totalOilsWeight" /><br>
                     <label for="totalRecipeWeight">Total Recipe Weight</label>
-                    <input type="number" name="totalRecipeWeight" /><br>
+                    <input class ="inputAmount" type="number" name="totalRecipeWeight" /><br>
 
                     <input type="submit" value="SUBMIT CHANGES"/><br>
 
@@ -124,27 +119,8 @@
 
     </div>
 
-    <div class="footer">
-        <div class="contact">
-          <h1><b>Studio Location</b></h1>
-                Careswell Street<br/>
-                Green Harbor, MA  02364<br/>
-
-                <a href="tel:6177750725" style="color: blue">(617) 775-0725</a><br/>
-
-                <a href='https://goo.gl/maps/Z2ADBDxKiemAEBfY9' title='Directions' style="color: blue"> Directions</a><br/>
-        </div>
-
-        <div class="icons">
-           <a href="https://www.facebook.com/carole.brnotierney/" style="left: 1120px; top: 1000%"><i class="fab fa-facebook-square fa-2x fa-fw target="_blank"></i></a>
-
-           <a href="mailto:caroleatierney@gmail.com" target="_top" style="left: 1140px; top: 1000%"><i class="fas fa-envelope fa-2x fa-fw" target="_blank"></i> </a>
-
-           <a href="https://www.instagram.com/caroleatierney" style="left: 1160px; top: 1000%" target="_blank"><i class="fab fa-instagram fa-2x fa-fw"></i> </a>
-
-           <a href="www.linkedin.com/in/caroleatierney" style="left: 1160px; top: 1000%" target="_blank"><i class="fab fa-instagram fa-2x fa-fw"></i> </a>
-        </div>
-    </div>
+    <!-- footer -->
+    <%- include('./partials/footer.ejs') %>
 
     </div>
   </body>

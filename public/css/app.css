@@ -4,7 +4,7 @@
 
 body {
   height: 100%;
-  width: 75%;
+  width: 100%;
   font-size: 25px;
   color: black;
 }
@@ -18,25 +18,10 @@ body {
   filter: alpha(opacity=20);
 }
 
-/* =========== grid container SHOW & EDIT page =========== */
 .form {
   display: flex;
   flex-flow: column wrap;
   /* background-color:  #69967e; */
-}
-.soap-container {
-  display: grid;
-  grid-template-rows: 1fr 1fr 400px 1fr;
-  grid-template-columns: repeat(4, 1fr);
-  flex-wrap: wrap;
-  flex-grow: 1;
-  background-color:  #69967e;
-
-  grid-template-areas:
-  "nav nav nav nav"
-  "header header header header"
-  "side-bar soap-ingredients soap-lye-weight soap-cost"
-  "footer footer footer footer";
 }
 
 .soap-cost {
@@ -60,6 +45,45 @@ body {
   font-size: 18px;
 }
 
+.name-image {
+  grid-area: name-image;
+  /* background-color:  #69967e; */
+  text-align: center;
+  font-size: 18px;
+}
+
+/* =========== grid container SHOW & EDIT page =========== */
+.soap-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 400px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  flex-grow: 1;
+  background-color:  #69967e;
+
+  grid-template-areas:
+  "nav nav nav nav"
+  "header header header header"
+  "side-bar soap-ingredients soap-lye-weight soap-cost"
+  "footer footer footer footer";
+}
+
+/* =========== grid container NEW page =========== */
+.new-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 400px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  flex-grow: 1;
+  background-color:  #69967e;
+
+  grid-template-areas:
+  "nav nav nav nav"
+  "header header header header"
+  "name-image soap-ingredients soap-lye-weight soap-cost"
+  "footer footer footer footer";
+}
+
 /* =========== grid container index page =========== */
 
 .grid-container {
@@ -74,6 +98,8 @@ body {
   "footer footer footer footer";
 }
 
+/* =========== grid container index page =========== */
+
 .nav {
   grid-area: nav;
   background-color: #ccc49b;
@@ -81,8 +107,8 @@ body {
 
 .header {
   grid-area: header;
-  background-color: #b08498;
-  color: #8cb4d1;
+  background-color: #bf9975;
+  color: black;
   text-align: center;
 }
 
@@ -90,30 +116,35 @@ body {
   grid-area: footer;
   background-color: #ccc49b;
   display: flex;
+  flex: space-evenly;
   flex-direction: row;
-  display: inline-block;
 }
 
 .side-bar {
   grid-area: side-bar;
   background-color: #69967e;
+  text-align: center;
 }
 
 .soap-list {
   grid-area: soap-list;
-    background-color: #69967e;
-  /* background-color: red; */
+  background-color: #69967e;
   text-align: center;
 }
-
+/* ====================== misc ======================= */
 a {
   color: white;
   text-decoration: none;
+}
+h1 {
+  color: black;
 }
 
 ul {
   list-style-type: none;
 }
+
+/* ==================== buttons ====================== */
 
 .button {
   /* w3schools */
@@ -127,4 +158,42 @@ ul {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.inputIngredient {
+  background-color: #e6e0dc;
+  height: 18px;
+  width: 80px;
+  border: none;
+  color: black;
+  margin: 3px 1px;
+}
+
+.inputAmount {
+  background-color: #e6e0dc;
+  height: 18px;
+  width: 30px;
+  border: none;
+  color: black;
+  margin: 3px 1px;
+}
+
+.soapNameImage {
+  background-color: #e6e0dc;
+  height: 18px;
+  width: 150px;
+  border: none;
+  color: black;
+  margin: 3px 1px;
+}
+
+.form-button {
+  background-color: #dea97e;
+  border-color: red;
+  border-width: thick;
+  height: 18px;
+  width: 150px;
+  border: none;
+  color: black;
+  margin: 3px 1px;
 }
