@@ -4,20 +4,101 @@
     <meta charset="utf-8">
     <title>soap show</title>
 
+    <link rel="stylesheet" href="/css/app.css">
+
   </head>
   <body>
 
-    <h1>Soap Edit Page</h1>
+    <div class="soap-container">
 
-      Name: <input type="text" name="name" value="<%=soap.name%>" /><br/>
-      Ingredients: <input type="text" name="ingredients" value="<%=soap.entry%>" /><br/>
+        <div class="nav">
+          <h2>nav</h2>
+        </div>
 
-      <!-- Edit button/form -->
-      <form action="<%=soap.id%>?_method=PUT" method="POST">
-        <input type="submit" value="EDIT SOAP"/>
-      </form>
+        <div class="header">
+          <h2>Edit <%=soap.name%></h2>
+        </div>
 
-    <a href="/soap">Back to Soap Index</a>
+        <div class="side-bar">
+          <img src = <%=soap.image + ".jpg"%> alt="Soap Image" width="100%" height="100%">
+          <input type="submit" value="SUBMIT CHANGES"/><br>
+        </div>
+        <form action="/soap/<%=soap.id%>?_method=PUT" class="form" method="POST">
+
+              <div class="soap-ingredients">
+                  <h3> Ingredients </h3>
+                  <%if (soap.ingredients.amount1 > 0) { %>
+                    <input type="text"   name="ingredient1"   value="<%=soap.ingredients.ingredient1%>" <br>
+                    <input type="number" name="amount1"       value="<%=soap.ingredients.amount1%>" <br>
+                  <%}%>
+
+                  <%if (soap.ingredients.amount2 > 0) { %>
+                    <input type="text"   name="ingredient2"   value="<%=soap.ingredients.ingredient2%>" <br>
+                    <input type="number" name="amount2"       value="<%=soap.ingredients.amount2%>" <br>
+                  <%}%>
+
+                  <%if (soap.ingredients.amount3 > 0) { %>
+                    <input type="text"   name="ingredient3"   value="<%=soap.ingredients.ingredient3%>"<br>
+                    <input type="number" name="amount3"       value="<%=soap.ingredients.amount3%>"<br>
+                  <%}%>
+
+                  <%if (soap.ingredients.amount4 > 0) { %>
+                    <input type="text"   name="ingredient4"   value="<%=soap.ingredients.ingredient4%>"<br>
+                    <input type="number" name="amount4"       value="<%=soap.ingredients.amount4%>"<br>
+                  <%}%>
+
+                  <%if (soap.ingredients.amount5 > 0) { %>
+                    <input type="text"   name="ingredient5"   value="<%=soap.ingredients.ingredient5%>"<br>
+                    <input type="number" name="amount5"       value="<%=soap.ingredients.amount5%>"<br>
+                  <%}%>
+
+                  <%if (soap.ingredients.amount6 > 0) { %>
+                    <input type="text"   name="ingredient6"   value="<%=soap.ingredients.ingredient6%>"<br>
+                    <input type="number" name="amount6"       value="<%=soap.ingredients.amount6%>"<br>
+                  <%}%>
+
+                  <%if (soap.ingredients.amount7 > 0) { %>
+                    <input type="text"   name="ingredient7"   value="<%=soap.ingredients.ingredient7%>"<br>
+                    <input type="number" name="amount7"       value="<%=soap.ingredients.amount7%>"<br>
+                  <%}%>
+
+                  <%if (soap.ingredients.amount8 > 0) { %>
+                    <input type="text"   name="ingredient8"   value="<%=soap.ingredients.ingredient8%>"<br>
+                    <input type="number" name="amount8"       value="<%=soap.ingredients.amount8%>"<br>
+                  <%}%>
+              </div>
+
+              <div class="soap-cost">
+                    <h3>Purchase Information</h3>
+                    Cost per Bar:   <input type="number" name="costPerBar"     value="<%=soap.costPerBar%>" /><br>
+                    Cost per Pound: <input type="number" name="costPerPound" value="<%=soap.costPerPound%>" /><br>
+                    Cost per Bar to Giftwrap: <input type="number" name="costPerBarToGiftWrap" value="<%=soap.costPerBarToGiftWrap%>" /><br>
+                    Bars Available for Purchase: <input type="number" name="soap.totalBarsAvail" value="" <%=soap.totalBarsAvail%>" /><br>
+
+                    <h3>Additional Information</h3>
+                    % Super Fat: <input type="number" name="soap.percentSuperFat" value="<%=soap.percentSuperFat%>"/><br>
+                    Exfoliating? <input type="number" name="soap.exfoliating" value="<%=soap.exfoliating%>"/><br>
+                    Notes: <input type="number" name="Tsoap.notes" value="<%=soap.notes%>"/><br>
+              </div>
+
+            <div class="soap-lye-weight">
+                    <h3> Lye Calculation </h3>
+                    % Minimum Water Needed: <input type="number" name="minimumWaterNeeded" value="<%=soap.lyeCalculation.minimumWaterNeeded%>" /><br>
+                    % Sodium Hyroxide: <input type="number" name="sodiumHydroxide" value="<%=soap.lyeCalculation.sodiumHydroxide%>" /><br>
+
+                    <h3> Weights </h3>
+                    Total Oils Weight: <input type="number" name="sodiumHydroxide" value="<%=soap.totalOilsWeight%>" /><br>
+                    Total Recipe Weight: <input type="number" name="sodiumHydroxide" value="<%=soap.totalRecipeWeight%>" /><br>
+            </div>
+          </form>
+
+    </div>
+
+    <div class="footer">
+      <a href="/soap">Back to Soap Index</a>
+    </div>
+
+    </div>
   </body>
 </html>
 

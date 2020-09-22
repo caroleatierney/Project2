@@ -133,19 +133,26 @@ app.get('/soap/:id', (req, res)=>  {
 });
 
 // ****************************************
-// *************  PUT ROUTE   ************
+// ************* ACTION ROUTES ************
+// ****************************************
+
+
+// ****************************************
+// ************** PUT ROUTE ***************
 // ****************************************
 // posts the change from edit
-app.put('/:id', (req, res)=>{
-    res.send(req.params.id);
-    // Soap.findByIdAndUpdate(
-      // req.params.id,
-      // req.body,
-      // {new:true},
-      // (err, updatedSoap) => {
+app.put('/soap/:id', (req, res)=>{
+// app.put(':id', (req, res)=>{
+    // res.send(req.params.id);
+
+    Soap.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {new:true},
+      (err, updatedSoap) => {
         // res.send(updatedSoap);
-    //  res.redirect('/soap');  //redirect to index page
-    // });
+     res.redirect('/soap');  //redirect to index page
+    });
 });
 
 // ****************************************
@@ -153,12 +160,61 @@ app.put('/:id', (req, res)=>{
 // ****************************************
 // creates a new soap
 app.post('/soap', (req, res)=> {
+  // console.log(req.body);
   // res.send('new soap post route');
-  // res.send(req.body);
+  res.send(req.body);
 
-  Soap.create(req.body, (error, createdSoap) => {
-    res.redirect('/soap');
-  });
+  // Soap.create(req.body, (error, createdSoap) => {
+    // res.redirect('/soap');
+  // });
+
+// create a new soap object to match the data structure
+// of the model.  The data needs to be re-shaped from
+// the req.body form
+
+let newSoap = {
+    name: req.body.name,
+    image: req.body.image,
+    percentSuperFat: req.body.percentSuperFat,
+    ingredients:
+    {
+      ingredient1: req.body.ingredient1,
+      amount1: req.body.amount1,
+      ingredient2: req.body.ingredient2,
+      amount2: req.body.amount2,
+      ingredient3: req.body.ingredient3,
+      amount3: req.body.amount3,
+      ingredient4: req.body.ingredient4,
+      amount4: req.body.amount4,
+      ingredient5: req.body.ingredient5,
+      amount5: req.body.amount5,
+      ingredient6: req.body.ingredient6,
+      amount6: req.body.amount6,
+      ingredient7: req.body.ingredient7,
+      amount7: req.body.amount7,
+      ingredient8: req.body.ingredient8,
+      amount8: req.body.amount8
+    },
+    costPerBar: req.body.costPerBar,
+    costPerPound: req.body.costPerPound,
+    addCostToGiftWrapPerBar: req.body.addCostToGiftWrapPerBar,
+    lyeCalculation:
+    {
+      minimumWaterNeeded: req.body.minimumWaterNeeded,
+      sodiumHydroxide: req.body.sodiumHydroxide,
+    },
+    totalOilsWeight: req.body.totalOilsWeight,
+    totalRecipeWeight: req.body.totalRecipeWeight,
+    totalBarsAvail: req.body.totalBarsAvail,
+    exfoliating: req.body.exfoliating,
+    notes: req.body.notes
+  }
+  console.log(newSoap)
+  // pushes the newSoap object into the databse
+  soap.push(newSoap)
+  // redirects to soap
+  res.redirect('/soap')
+
 });
 
 // ****************************************
@@ -178,3 +234,16 @@ app.delete('/:id', (req, res)=>{
 // ************** LISTENER ****************
 // ****************************************
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));
+
+
+//  lye calculator function
+//  styling
+// header
+// footer
+// nav
+
+// index page styling
+
+// show, new, edit styling - same?
+
+// sign in last thing?
