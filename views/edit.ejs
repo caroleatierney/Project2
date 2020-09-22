@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>soap show</title>
+    <title>soap edit</title>
 
     <link rel="stylesheet" href="/css/app.css">
 
@@ -22,12 +22,16 @@
 
         <div class="side-bar">
           <img src = <%=soap.image + ".jpg"%> alt="Soap Image" width="100%" height="100%">
-          <input type="submit" value="SUBMIT CHANGES"/><br>
         </div>
+
         <form action="/soap/<%=soap.id%>?_method=PUT" class="form" method="POST">
 
               <div class="soap-ingredients">
                   <h3> Ingredients </h3>
+
+                  Soap Name: <input type="text"   name="name"   value="<%=soap.name%>" <br>
+                  Soap Image: <input type="text"   name="image"   value="<%=soap.image%>" <br>
+
                   <%if (soap.ingredients.amount1 > 0) { %>
                     <input type="text"   name="ingredient1"   value="<%=soap.ingredients.ingredient1%>" <br>
                     <input type="number" name="amount1"       value="<%=soap.ingredients.amount1%>" <br>
@@ -73,13 +77,13 @@
                     <h3>Purchase Information</h3>
                     Cost per Bar:   <input type="number" name="costPerBar"     value="<%=soap.costPerBar%>" /><br>
                     Cost per Pound: <input type="number" name="costPerPound" value="<%=soap.costPerPound%>" /><br>
-                    Cost per Bar to Giftwrap: <input type="number" name="costPerBarToGiftWrap" value="<%=soap.costPerBarToGiftWrap%>" /><br>
-                    Bars Available for Purchase: <input type="number" name="soap.totalBarsAvail" value="" <%=soap.totalBarsAvail%>" /><br>
+                    Cost per Bar to Giftwrap: <input type="number" name="addCostToGiftWrapPerBar" value="<%=soap.costPerBarToGiftWrap%>" /><br>
+                    Bars Available for Purchase: <input type="number" name="totalBarsAvail" value="<%=soap.totalBarsAvail%>" /><br>
 
                     <h3>Additional Information</h3>
-                    % Super Fat: <input type="number" name="soap.percentSuperFat" value="<%=soap.percentSuperFat%>"/><br>
-                    Exfoliating? <input type="number" name="soap.exfoliating" value="<%=soap.exfoliating%>"/><br>
-                    Notes: <input type="number" name="Tsoap.notes" value="<%=soap.notes%>"/><br>
+                    % Super Fat: <input type="number" name="percentSuperFat" value="<%=soap.percentSuperFat%>"/><br>
+                    Exfoliating? <input type="text" name="exfoliating" value="<%=soap.exfoliating%>"/><br>
+                    Notes: <input type="text" name="notes" value="<%=soap.notes%>"/><br>
               </div>
 
             <div class="soap-lye-weight">
@@ -88,9 +92,13 @@
                     % Sodium Hyroxide: <input type="number" name="sodiumHydroxide" value="<%=soap.lyeCalculation.sodiumHydroxide%>" /><br>
 
                     <h3> Weights </h3>
-                    Total Oils Weight: <input type="number" name="sodiumHydroxide" value="<%=soap.totalOilsWeight%>" /><br>
-                    Total Recipe Weight: <input type="number" name="sodiumHydroxide" value="<%=soap.totalRecipeWeight%>" /><br>
+                    Total Oils Weight: <input type="number" name="totalOilsWeight" value="<%=soap.totalOilsWeight%>" /><br>
+                    Total Recipe Weight: <input type="number" name="totalRecipeWeight" value="<%=soap.totalRecipeWeight%>" /><br>
+
             </div>
+
+            <input type="submit" value="SUBMIT CHANGES"/><br>
+
           </form>
 
     </div>
@@ -102,5 +110,3 @@
     </div>
   </body>
 </html>
-
-<!-- code graveyard -->

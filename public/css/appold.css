@@ -1,3 +1,5 @@
+/* edit to push */
+
 * {
   border: 1.5px solid black;
 }
@@ -18,7 +20,7 @@ body {
   filter: alpha(opacity=20);
 }
 
-/* =========== grid container SHOW & EDIT page =========== */
+/* =========== grid container SHOW & EDIT & NEW page =========== */
 .form {
   display: flex;
   flex-flow: column wrap;
@@ -78,17 +80,20 @@ body {
 .header {
   grid-area: header;
   background-color: yellow;
+  text-align: center;
+  padding: 2%;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: orange;
+  text-align: center;
+  /* padding: 5%; */
 }
 
 .side-bar {
   grid-area: side-bar;
   background-color: blue;
-}
-
-.soap-list {
-  grid-area: soap-list;
-  /* background-color: red; */
-  text-align: center;
 }
 
 /* ================================================ */
@@ -110,15 +115,14 @@ body {
 
 a {
   color: hotpink;
+  background-color: black;
+  /* padding: 4px; */
+  /* text-align: center; */
+  text-decoration: none;
 }
 
 ul {
   list-style-type: none;
-}
-
-.footer {
-  grid-area: footer;
-  background-color: orange;
 }
 
 .new {
