@@ -29,13 +29,12 @@
 
                     <li>
                         <form action="<%=soap[i].id%>?_method=DELETE" method="POST">
-                        <a href="/soap/<%=i%>" style="text-decoration: none;"><%=soap[i].name%></a>
+                              <a href="/soap/<%=i%>" style="text-decoration: none;"><%=soap[i].name%></a>
 
-                        <!-- Delete button/form -->
-                          <input type="submit" value="DELETE"/>
-                          <!-- Edit link -->
-                          <a href="/soap/<%=soap[i].id%>/edit">EDIT</a>
-
+                              <!-- Delete button/form -->
+                              <input type="submit" value="DELETE"/>
+                              <!-- Edit link -->
+                              <a href="/soap/<%=soap[i].id%>/edit">EDIT</a>
                           </form>
                     </li>
 
