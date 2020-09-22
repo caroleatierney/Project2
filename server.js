@@ -14,12 +14,6 @@ require('dotenv').config()
 const PORT = process.env.PORT
 
 // ******************************
-// **********  DATABASE *********
-// ******************************
-// soap seed model
-const soapSeed = require('./models/soapSeed')
-
-// ******************************
 // ***********  MONGO ***********
 // ******************************
 // Connect to Mongo &
@@ -52,16 +46,6 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // soap controller
 app.use(soapController);
-
-// ******************************
-// ** POPULATE WITH SEED DATA ***
-// ******************************
-// ** remove after running once
-// Soap.create( soapSeed, ( err , data ) => {
-//       if ( err ) console.log ( err.message )
-//           console.log( "added provided soap data" )
-//       }
-// );
 
 // ****************************************
 // ************** LISTENER ****************

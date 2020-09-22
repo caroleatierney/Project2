@@ -5,51 +5,69 @@
         <meta charset="utf-8">
         <title>Soap Index</title>
         <link rel="stylesheet" href="/css/app.css">
+        <!-- icon font awesome -->
+        <script src="https://kit.fontawesome.com/db553eed8d.js" crossorigin="anonymous"></script>
 
     </head>
     <body>
     <div class="grid-container">
 
       <div class="nav">
-        <h2>nav</h2>
+        <button type="button" name="button" class="button"><a href="/soap/new" style="text-decoration: none">ENTER A NEW SOAP</a></button>
       </div>
       <div class="header">
-        <h2>header</h2>
+        <h2>Available Soaps</h2>
       </div>
 
       <div class="side-bar">
-        <h2>sidebar</h2>
       </div>
 
           <div class="soap-list">
 
-              <h1>Soap index page</h1>
               <ul>
                   <% for(let i = 0; i < soap.length; i++){ %>
 
                     <li>
                         <form action="<%=soap[i].id%>?_method=DELETE" method="POST">
                               <a href="/soap/<%=i%>" style="text-decoration: none;"><%=soap[i].name%></a>
-
+                              <img src = <%=soap.image + ".jpg"%><a href="/soap/<%=i%>" alt="Soap Image" width="100%" height="100%">
                               <!-- Delete button/form -->
-                              <input type="submit" value="DELETE"/>
+                              <input type="submit" value="DELETE" class="button" />
                               <!-- Edit link -->
-                              <a href="/soap/<%=soap[i].id%>/edit">EDIT</a>
+                              <a href="/soap/<%=soap[i].id%>/edit" class="button">EDIT</a>
                           </form>
                     </li>
 
                   <% } %>
               </ul>
 
-              <button class="new" type="button" name="button"><a href="/soap/new" style="text-decoration: none;">Enter a New Soap</a></button>
-
             </div>
 
+            <div class="footer">
+              <div class="contact">
+                <h1><b>Studio Location</b></h1>
+                      Careswell Street<br/>
+                      Green Harbor, MA  02364<br/>
 
+                      <a href="tel:6177750725" style="color: blue">(617) 775-0725</a><br/>
 
-        <div class="footer">
-          <h2>footer</h2>
-        </div>
+                      <a href='https://goo.gl/maps/Z2ADBDxKiemAEBfY9' title='Directions' style="color: blue"> Directions</a><br/>
+              </div>
+
+              <div class="icons">
+                 <a href="https://www.facebook.com/carole.brnotierney/" style="left: 1120px; top: 1000%"><i class="fab fa-facebook-square fa-2x fa-fw target="_blank"></i></a>
+
+                 <a href="mailto:caroleatierney@gmail.com" target="_top" style="left: 1140px; top: 1000%"><i class="fas fa-envelope fa-2x fa-fw" target="_blank"></i> </a>
+
+                 <a href="https://www.instagram.com/caroleatierney" style="left: 1160px; top: 1000%" target="_blank"><i class="fab fa-instagram fa-2x fa-fw"></i> </a>
+
+                 <a href="www.linkedin.com/in/caroleatierney" style="left: 1160px; top: 1000%" target="_blank"><i class="fab fa-instagram fa-2x fa-fw"></i> </a>
+              </div>
+
+            </footer>
+
+        <!-- <- include ('./partials/footer.ejs') > -->
+
       </div>
     </body>
 </html>

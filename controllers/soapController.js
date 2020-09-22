@@ -8,6 +8,7 @@ const router = express.Router()
 // **********  DATABASE *********
 // ******************************
 const Soap = require('../models/soap.js')
+const soapSeed = require('../models/soapSeed')
 
 // * * * * * * * * *  * * * * * * * * * * *
 // * * * * * * * GET ROUTES * * * * * * * *
@@ -21,6 +22,16 @@ const Soap = require('../models/soap.js')
 // app.get('/' , (req, res) => {
 //   res.send('Hello World! I am going to be sending soap data to Heroku');
 // });
+
+// ******************************
+// ** POPULATE WITH SEED DATA ***
+// ******************************
+// ** remove after running once
+// Soap.create( soapSeed, ( err , data ) => {
+//       if ( err ) console.log ( err.message )
+//           console.log( "added provided soap data" )
+//       }
+// );
 
 // ****************************************
 // ************ INDEX ROUTE   *************

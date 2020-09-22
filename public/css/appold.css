@@ -1,3 +1,149 @@
+* {
+  /* border: 1.5px solid black; */
+}
+
+body {
+  height: 100%;
+  width: 75%;
+  font-size: 25px;
+  color: black;
+  /* display: inline-block; */
+}
+
+.fullPage {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  /* background-image: url(https://imgur.com/3AGzYr9.jpg); */
+  /* opacity: 0.3; */
+  /* filter: alpha(opacity=20); */
+ }
+
+/* =========== grid container SHOW & EDIT page =========== */
+.form {
+  display: flex;
+  flex-flow: column wrap;
+}
+.soap-container {
+  display: grid;
+  /* display: flex; */
+  grid-template-rows: 1fr 1fr 400px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  flex-wrap: wrap;
+  flex-grow: 1;
+  /* background-color: #69967e; */
+
+  grid-template-areas:
+  "nav nav nav nav"
+  "header header header header"
+  "side-bar soap-ingredients soap-lye-weight soap-cost"
+  "footer footer footer footer";
+}
+
+.soap-cost {
+  grid-area: soap-cost;
+  background-color: #69967e;
+  text-align: center;
+  font-size: 18px;
+}
+
+.soap-ingredients {
+  grid-area: soap-ingredients;
+  background-color: #69967e;
+  text-align: center;
+  font-size: 20px;
+}
+
+.soap-lye-weight {
+  grid-area: soap-lye-weight;
+  background-color: #69967e;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* =========== grid container index page =========== */
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 300px 1fr;
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-areas:
+  "nav nav nav nav"
+  "header header header header"
+  "soap-list soap-list soap-list soap-list"
+  "footer footer footer footer";
+}
+
+.nav {
+  grid-area: nav;
+  background-color: #ccc49b;
+  /* padding: 5% 5%; */
+  /* margin: auto; */
+  /* background-image: url(https://i.imgur.com/97ZAiWV.jpg); */
+}
+
+.header {
+  grid-area: header;
+  color: #8cb4d1;
+  font-size: 22px;
+  background-color: #b08498;
+  text-align: center;
+  /* background-image: url(https://imgur.com/3AGzYr9.jpg); */
+}
+
+.side-bar {
+  grid-area: side-bar;
+  background-color: #69967e;
+}
+
+.soap-list {
+  grid-area: soap-list;
+  background-color: #69967e;
+  text-align: center;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.footer {
+  grid-area: footer;
+  /* display: flex; */
+  /* flex-flow: column wrap; */
+  background-color: #ccc49b;
+
+
+  /* flex-wrap: wrap; */
+  /* flex-grow: 1; */
+  /* flex-direction: row; */
+  /* justify-content: space-around; */
+  /* display: inline-block; */
+  /* background-color: orange; */
+}
+
+.button {
+  /* w3schools */
+  background-color: #ffcccc;
+  border-color: : black;
+  color: white;
+  /* padding: 8px 7px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 6px;
+}
+/* ================================================================== */
+
+
+
+
 /* edit to push */
 
 * {
