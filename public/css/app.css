@@ -189,6 +189,17 @@ table, th, td {
   margin: 3px 1px;
 }
 
+.inputNotes {
+  background-color: #e6e0dc;
+  width: 50%;
+  border-radius: 10px 10px 10px 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: auto;
+  color: black;
+  margin: 3px 1px;
+}
+
 .inputLg {
   background-color: #e6e0dc;
   height: 18px;

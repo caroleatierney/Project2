@@ -26,10 +26,10 @@
           <div class="soap-ingredients">
 
             <label for="name">Soap Name:</label>
-            <input type="text"   class ="imageLg" name="name"   value="<%=soap.name%>"<br />
+            <input type="text"   class ="inputLg" name="name"   value="<%=soap.name%>"<br />
 
             <label for="name">Soap Image:</label>
-            <input type="text"   class ="imageLg" name="image"   value="<%=soap.image%>" <br />
+            <input type="text"   class ="inputLg" name="image"   value="<%=soap.image%>" <br />
 
               <table id="Ingredients">
                   <tr>
@@ -107,8 +107,8 @@
 
               <h3>Additional Information</h3>
               % Super Fat: <input class ="inputSm" type="number" name="percentSuperFat" value="<%=soap.percentSuperFat%>"/><br>
-              Exfoliating? <input type="text" name="exfoliating" value="<%=soap.exfoliating%>"/><br>
-              Notes: <input type="text" name="notes" value="<%=soap.notes%>"/><br>
+              Exfoliating? <input class="inputMed" type="text" name="exfoliating" value="<%=soap.exfoliating%>"/><br>
+              Notes: <input class ="inputNotes" type="text" name="notes" value="<%=soap.notes%>"/><br>
         </div>
 
       </form>
