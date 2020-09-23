@@ -17,6 +17,8 @@ The app I created uses the following technologies:
   CSS Grid
 
   Unsolved problems:
+  - placement of divs determined location - not grid?
+  - disappointed in array processing
   - <br> doesn't seem to be working
   - Can't figure out how to default to /soap
   - some CSS formatting
@@ -24,6 +26,7 @@ The app I created uses the following technologies:
   - fonts not the same on delete buttons
 
   Wish List:
+  - models on index page
   - home made lye calculator made with JavaScript
   - pre-filled default values in new soap page
   - select true or false buttons
@@ -31,6 +34,10 @@ The app I created uses the following technologies:
   - links to stores for ingredients to make money
   - how to videos of me making the recipes
   - sign in/up logic
+  - additional fields!!! aka array!
+  - link to another database with all products/costs to produce soap
+  - % oil field next to ounces
+  - mold size field
 
   Wanted to do but didn't get to:
   - buy buttons
