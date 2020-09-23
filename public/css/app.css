@@ -7,6 +7,8 @@ body {
   width: 100%;
   font-size: 25px;
   color: black;
+  /* fun font */
+  font-family: 'Architects Daughter', cursive;
 }
 
 .fullPage {
@@ -21,7 +23,6 @@ body {
 .form {
   display: flex;
   flex-flow: column wrap;
-  /* background-color:  #69967e; */
 }
 
 .soap-cost {
@@ -98,7 +99,7 @@ body {
   "footer footer footer footer";
 }
 
-/* =========== grid container index page =========== */
+/* =========== grid container MAIN items =========== */
 
 .nav {
   grid-area: nav;
@@ -118,6 +119,7 @@ body {
   display: flex;
   flex: space-evenly;
   flex-direction: row;
+  font-size: 10px;
 }
 
 .side-bar {
@@ -129,7 +131,7 @@ body {
 .soap-list {
   grid-area: soap-list;
   background-color: #69967e;
-  text-align: center;
+  align-items: center;
 }
 /* ====================== misc ======================= */
 a {
@@ -140,10 +142,18 @@ h1 {
   color: black;
 }
 
+h2, h3 {
+  text-decoration: underline;
+}
+
 ul {
   list-style-type: none;
 }
 
+/* w3schools */
+table, th, td {
+  border: 1px solid black;
+}
 /* ==================== buttons ====================== */
 
 .button {
@@ -160,25 +170,26 @@ ul {
   cursor: pointer;
 }
 
-.inputIngredient {
+.inputSm {
   background-color: #e6e0dc;
   height: 18px;
-  width: 80px;
+  width: 50px;
+  border: none;
+  color: black;
+  margin: 3px 1px;
+  text-align: right;
+}
+
+.inputMed {
+  background-color: #e6e0dc;
+  height: 18px;
+  width: 150px;
   border: none;
   color: black;
   margin: 3px 1px;
 }
 
-.inputAmount {
-  background-color: #e6e0dc;
-  height: 18px;
-  width: 30px;
-  border: none;
-  color: black;
-  margin: 3px 1px;
-}
-
-.soapNameImage {
+.inputLg {
   background-color: #e6e0dc;
   height: 18px;
   width: 150px;
@@ -189,8 +200,6 @@ ul {
 
 .form-button {
   background-color: #dea97e;
-  border-color: red;
-  border-width: thick;
   height: 18px;
   width: 150px;
   border: none;
